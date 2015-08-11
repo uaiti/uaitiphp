@@ -1,0 +1,11 @@
+<?php
+$host = "localhost";
+$dbname = "<%= node['uaitiphp']['mysql_ping_db'] %>";
+$user = "<%= node['uaitiphp']['mysql_ping_user'] %>";
+$password = "<%= node['uaitiphp']['mysql_ping_pass'] %>";
+
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+} catch (Exception $e) {
+    header('HTTP/1.0 404 Not Found');
+}
