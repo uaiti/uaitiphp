@@ -10,6 +10,11 @@ package ['git', 'php-pear', 'mysql-server-5.5', 'mysql-client', 'php5-mysql', 'p
         action :install
 end
 
+service 'nginx' do
+	supports :status => true, :restart => true, :reload => true
+end
+
+
 # instala o mysql
 mysql_service node['uaitiphp']['project_name'] do
 	initial_root_password node['uaitiphp']['mysql_root_pass']
@@ -17,3 +22,31 @@ mysql_service node['uaitiphp']['project_name'] do
 	action [:create, :start]
 end
 
+mysql_config node['uaitiphp']['project_name'] do
+  source 'mysql-config.erb'
+  notifies :restart, 'mysql_service[' + node['uaitiphp']['project_name'] + ']'
+  action :create
+end
+
+
+# configura o ping do mysql
+directory '/var/www/html/' do
+	owner node['uaitiphp']['server_user']
+	group node['uaitiphp']['server_user']
+	mode '0755'
+	recursive true
+	action :create
+end
+
+template '/etc/nginx/sites-enabled/' + node['uaitiphp']['mysql_nginx_file'] do
+	source 'mysql-ping.erb'
+end
+template '/etc/nginx/sites-enabled/default' do
+	source 'default.erb'
+	manage_symlink_source true
+	notifies :reload, 'service[nginx]', :immediately
+end
+
+template "/var/www/html/mysql-ping.php" do
+	source 'mysql-ping.php'
+end

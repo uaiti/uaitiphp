@@ -35,15 +35,15 @@ template '/etc/nginx/sites-enabled/default' do
 	notifies :reload, 'service[nginx]', :immediately
 end
 
-# instala o nvm / nodejs
 
+# instala o nvm / nodejs
 node.default['nodejs']['install_method'] = 'package'
 include_recipe 'nodejs::npm'
 nodejs_npm 'bower'
 nodejs_npm 'grunt-cli'
 
+
 # instala o phing
-#include_recipe 'php'
 phingc = php_pear_channel 'pear.phing.info' do
 	action :discover
 end
@@ -51,6 +51,7 @@ php_pear 'phing' do
 	channel phingc.channel_name
 	action :install
 end
+
 
 # instala o composer
 node.default['composer']['install_globally'] = true
