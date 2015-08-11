@@ -1,8 +1,8 @@
 # general server
-default['uaitiphp']['project_name']     = 'project'
-default['uaitiphp']['server_user']      = 'project'
-default['uaitiphp']['home_dir']         = '/home/project'
-default['uaitiphp']['rsa_private_key']  = %q{
+default['uaitiphp']['project_name']       = 'project'
+default['uaitiphp']['server_user']        = 'project'
+default['uaitiphp']['home_dir']           = '/home/project'
+default['uaitiphp']['rsa_private_key']    = %q{
 -----BEGIN RSA PRIVATE KEY-----
 MIIEowIBAAKCAQEAzmz6gkB2VKviMmcb3jinFuXJHpWXct0Rj8KJUuw/rgbG1cxX
 o9njl7eGteVzcrqE69LQxMpQLQ1ZV8d8IQxLWbeaexJ6wziMO49VTsmZYO+aw0qR
@@ -31,18 +31,18 @@ PNc2trxJbeJ3gh9phBu6a996Kq2N5CxCYX44TavggvWyjq2GEljbpWrhwTKFy+ZB
 LKXz72JP+Yy5JGl9XeKYZlFZjrEj9NbbOAsHZCzYRLfwNQoy32qI
 -----END RSA PRIVATE KEY-----
 }
-default['uaitiphp']['rsa_public_key']  = 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDObPqCQHZUq+IyZxveOKcW5ckelZdy3RGPwolS7D+uBsbVzFej2eOXt4a15XNyuoTr0tDEylAtDVlXx3whDEtZt5p7EnrDOIw7j1VOyZlg75rDSpGgFUJMT5neHnkTiEpbwB42dNaMTL2yw0M9TodjUs7o9z+EnHTGcKzNewSTHvNIKPWmke2xEGbLfNMWCdMCkTKOaA6Ahb36quE7eHPVSirf44F7P52C+3P6zLCDDb8/ZvX++LRPxhc0ClEILduLzscmyggs171WAW4DziLyegHOjIKnOALvWPGEu7CRwxcxkoTQFwQxyUv/EqVijm9+kNNgynoTQRRUPip/pACz vagrant@ubuntu-14'
+default['uaitiphp']['rsa_public_key']    = 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDObPqCQHZUq+IyZxveOKcW5ckelZdy3RGPwolS7D+uBsbVzFej2eOXt4a15XNyuoTr0tDEylAtDVlXx3whDEtZt5p7EnrDOIw7j1VOyZlg75rDSpGgFUJMT5neHnkTiEpbwB42dNaMTL2yw0M9TodjUs7o9z+EnHTGcKzNewSTHvNIKPWmke2xEGbLfNMWCdMCkTKOaA6Ahb36quE7eHPVSirf44F7P52C+3P6zLCDDb8/ZvX++LRPxhc0ClEILduLzscmyggs171WAW4DziLyegHOjIKnOALvWPGEu7CRwxcxkoTQFwQxyUv/EqVijm9+kNNgynoTQRRUPip/pACz vagrant@ubuntu-14'
 
 
 # mysql
-default['uaitiphp']['mysql_root_pass']  = 'changeme'
-default['uaitiphp']['mysql_nginx_file'] = 'ping-mysql'
-default['uaitiphp']['mysql_ping_db']    = 'ping-db'
-default['uaitiphp']['mysql_ping_user']  = 'ping-user'
-default['uaitiphp']['mysql_ping_pass']  = 'ping-pass'
+default['uaitiphp']['mysql_root_pass']    = 'changeme'
+default['uaitiphp']['mysql_nginx_file']   = 'ping-mysql'
+default['uaitiphp']['mysql_ping_db']      = 'ping-db'
+default['uaitiphp']['mysql_ping_user']    = 'ping-user'
+default['uaitiphp']['mysql_ping_pass']    = 'ping-pass'
 
 
 # httpd
-default['uaitiphp']['server_name']      = 'project.com'
-default['uaitiphp']['nginx_file']       = 'project.com'
-default['uaitiphp']['webroot']          = 'webapp/webroot'
+default['uaitiphp']['server_name']        = 'project.com'
+default['uaitiphp']['nginx_file']         = 'project.com'
+default['uaitiphp']['webroot']            = 'webapp/webroot'
