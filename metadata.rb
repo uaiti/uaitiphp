@@ -1,0 +1,12 @@
+name 'uaitiphp'
+maintainer 'UaiTI'
+maintainer_email 'contato@uaiti.com.br'
+license 'all_rights'
+description 'Installs/Configure PHP+Nginx and MySQL servers'
+long_description 'Installs/Configure PHP+Nginx and MySQL servers'
+version '0.1.0'
+
+depends 'nodejs', '~> 2.4.0'
+depends 'composer', '~> 2.1.0'
+depends 'php', '~> 1.7.0'
+depends 'mysql', '~> 6.1.0'
