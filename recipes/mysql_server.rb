@@ -50,3 +50,11 @@ end
 template "/var/www/html/mysql-ping.php" do
 	source 'mysql-ping.php.erb'
 end
+
+# executa o arquivo com configurações iniciais
+template '/tmp/initdb.sql' do
+	source 'initdb.sql.erb'
+end
+execute 'load_database' do
+	command 'mysql -u root -h 127.0.0.1 -p' + node['uaitiphp']['mysql_root_pass'] + ' < /tmp/initdb.sql'
+end
