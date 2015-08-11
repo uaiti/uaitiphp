@@ -48,5 +48,5 @@ template '/etc/nginx/sites-enabled/default' do
 end
 
 template "/var/www/html/mysql-ping.php" do
-	source 'mysql-ping.php'
+	source 'mysql-ping.php.erb'
 end
