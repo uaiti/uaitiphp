@@ -14,8 +14,6 @@ Para alterar as configurações, crie um arquivo de atributos com o seguinte con
 ```ruby
 # general server
 node.default['uaitiphp']['project_name']    = 'project'
-node.default['uaitiphp']['server_user']     = 'project'
-node.default['uaitiphp']['home_dir']        = '/home/project'
 
 # mysql
 node.default['uaitiphp']['mysql_root_pass'] = 'changeme'

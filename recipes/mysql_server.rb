@@ -31,8 +31,8 @@ end
 
 # configura o ping do mysql
 directory '/var/www/html/' do
-	owner node['uaitiphp']['server_user']
-	group node['uaitiphp']['server_user']
+	owner node['uaitilinuxserver']['server_user']
+	group node['uaitilinuxserver']['server_user']
 	mode '0755'
 	recursive true
 	action :create

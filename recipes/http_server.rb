@@ -19,8 +19,8 @@ end
 
 # template de configuracao do servidor http
 directory '/var/www/html/' + node['uaitiphp']['project_name'] do
-	owner node['uaitiphp']['server_user']
-	group node['uaitiphp']['server_user']
+	owner node['uaitilinuxserver']['server_user']
+	group node['uaitilinuxserver']['server_user']
 	mode '0755'
 	recursive true
 	action :create

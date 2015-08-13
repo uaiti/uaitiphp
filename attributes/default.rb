@@ -1,6 +1,5 @@
 # general server
 default['uaitiphp']['project_name']       = 'project'
-default['uaitiphp']['server_user']        = 'project'
 
 
 # mysql
