@@ -18,7 +18,7 @@ service 'php-fpm' do
 end
 
 # template de configuracao do servidor http
-directory '/var/www/html/' + node['uaitilinuxserver']['project_name'] do
+directory '/var/www/html/' + node['uaitiphp']['project_name'] do
 	owner node['uaitilinuxserver']['server_user']
 	group node['uaitilinuxserver']['server_user']
 	mode '0755'

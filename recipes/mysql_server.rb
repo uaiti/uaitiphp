@@ -16,15 +16,15 @@ end
 
 
 # instala o mysql
-mysql_service node['uaitilinuxserver']['project_name'] do
+mysql_service node['uaitiphp']['project_name'] do
 	initial_root_password node['uaitiphp']['mysql_root_pass']
 	bind_address '0.0.0.0'
 	action [:create, :start]
 end
 
-mysql_config node['uaitilinuxserver']['project_name'] do
+mysql_config node['uaitiphp']['project_name'] do
   source 'mysql-config.erb'
-  notifies :restart, 'mysql_service[' + node['uaitilinuxserver']['project_name'] + ']'
+  notifies :restart, 'mysql_service[' + node['uaitiphp']['project_name'] + ']'
   action :create
 end
 
