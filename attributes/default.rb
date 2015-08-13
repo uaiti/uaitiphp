@@ -1,3 +1,6 @@
+# general server
+default['uaitiphp']['project_name']       = 'project'
+
 # mysql
 default['uaitiphp']['mysql_root_pass']    = 'changeme'
 default['uaitiphp']['mysql_nginx_file']   = 'ping-mysql'
