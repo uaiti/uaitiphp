@@ -17,7 +17,5 @@ CREATE TABLE IF NOT EXISTS `<%= node['uaitiphp']['mysql_ping_db'] %>`.changelog 
 
 GRANT ALL ON *.* TO 'root'@'%';
 
-
--- DROP USER '<%= node['uaitiphp']['mysql_ping_user'] %>';
-CREATE USER '<%= node['uaitiphp']['mysql_ping_user'] %>'@'%' IDENTIFIED BY '<%= node['uaitiphp']['mysql_ping_pass'] %>';
-GRANT ALL ON biotec.* TO '<%= node['uaitiphp']['mysql_ping_user'] %>'@'%' IDENTIFIED BY '<%= node['uaitiphp']['mysql_ping_pass'] %>';
+# cria o usuário
+GRANT ALL ON `<%= node['uaitiphp']['mysql_ping_db'] %>`.* TO '<%= node['uaitiphp']['mysql_ping_user'] %>'@'%' IDENTIFIED BY '<%= node['uaitiphp']['mysql_ping_pass'] %>';
