@@ -56,5 +56,6 @@ template '/tmp/initdb.sql' do
 	source 'initdb.sql.erb'
 end
 execute 'load_database' do
+	ignore_failure true
 	command 'mysql -u root -h 127.0.0.1 -p' + node['uaitiphp']['mysql_root_pass'] + ' < /tmp/initdb.sql'
 end
