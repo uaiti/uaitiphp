@@ -6,6 +6,7 @@ description 'Installs/Configure PHP+Nginx and MySQL servers'
 long_description 'Installs/Configure PHP+Nginx and MySQL servers'
 version '0.1.0'
 
+depends 'uaitilinuxserver'
 depends 'nodejs', '~> 2.4.0'
 depends 'composer', '~> 2.1.0'
 depends 'php', '~> 1.7.0'
