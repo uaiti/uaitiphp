@@ -11,14 +11,12 @@
 # Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
 ##
 
-client_max_body_size 10m;
-
 
 # Default server configuration
 #
 server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
+	listen 80;
+	listen [::]:80;
 
 
 	# SSL configuration
