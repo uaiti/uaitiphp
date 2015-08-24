@@ -58,5 +58,6 @@ node.default['composer']['install_globally'] = true
 include_recipe "composer"
 composer_project '/var/www/html/' + node['uaitiphp']['project_name'] do
 	quiet false
+	only_if 'ls /var/www/html/' + node['uaitiphp']['project_name'] + '/project.json'
 	action :install
 end
