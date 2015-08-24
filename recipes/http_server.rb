@@ -55,7 +55,8 @@ end
 
 # instala o composer
 node.default['composer']['install_globally'] = true
-composer_project '/var/www/html/' do
+include_recipe "composer"
+composer_project '/var/www/html/' + node['uaitiphp']['project_name'] do
 	quiet false
 	action :install
 end
