@@ -30,31 +30,31 @@ end
 
 
 # configura o ping do mysql
-directory '/var/www/html/' do
-	owner node['uaitilinuxserver']['server_user']
-	group node['uaitilinuxserver']['server_user']
-	mode '0755'
-	recursive true
-	action :create
-end
-
-template '/etc/nginx/sites-enabled/' + node['uaitiphp']['mysql_nginx_file'] do
-	source 'mysql-ping.erb'
-end
-template '/etc/nginx/sites-enabled/default' do
-	source 'default.erb'
-	manage_symlink_source true
-	notifies :reload, 'service[nginx]', :immediately
-end
-
-template "/var/www/html/mysql-ping.php" do
-	source 'mysql-ping.php.erb'
-end
-
-# executa o arquivo com configurações iniciais
-template '/tmp/initdb.sql' do
-	source 'initdb.sql.erb'
-end
+# directory '/var/www/html/' do
+# 	owner node['uaitilinuxserver']['server_user']
+# 	group node['uaitilinuxserver']['server_user']
+# 	mode '0755'
+# 	recursive true
+# 	action :create
+# end
+# 
+# template '/etc/nginx/sites-enabled/' + node['uaitiphp']['mysql_nginx_file'] do
+# 	source 'mysql-ping.erb'
+# end
+# template '/etc/nginx/sites-enabled/default' do
+# 	source 'default.erb'
+# 	manage_symlink_source true
+# 	notifies :reload, 'service[nginx]', :immediately
+# end
+# 
+# template "/var/www/html/mysql-ping.php" do
+# 	source 'mysql-ping.php.erb'
+# end
+# 
+# # executa o arquivo com configurações iniciais
+# template '/tmp/initdb.sql' do
+# 	source 'initdb.sql.erb'
+# end
 execute 'load_database' do
 	command 'mysql -u root -h 127.0.0.1 -p' + node['uaitiphp']['mysql_root_pass'] + ' < /tmp/initdb.sql'
 end
